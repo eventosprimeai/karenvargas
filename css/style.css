@@ -119,12 +119,12 @@ a:hover { color: var(--gold-bright); }
 .exp-card p { font-size: .85rem; color: var(--gray); font-weight: 300; }
 
 /* ========== SE SIENTE ECUADOR ========== */
-.sse-section { padding: 0; }
-.sse-hero { position: relative; min-height: 500px; display: flex; align-items: center; justify-content: center; text-align: center; overflow: hidden; padding: 6rem 2rem; }
-.sse-hero-bg { position: absolute; inset: 0; }
-.sse-hero-bg img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; }
-.sse-hero-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,10,10,.6) 0%, rgba(10,10,10,.4) 40%, rgba(10,10,10,.85) 100%); }
-.sse-hero-content { position: relative; z-index: 2; max-width: 800px; }
+.sse-section { padding: 0 !important; }
+.sse-hero { position: relative; min-height: 550px; display: flex; align-items: center; justify-content: center; text-align: center; overflow: hidden; padding: 6rem 2rem; }
+.sse-hero-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; }
+.sse-hero-bg img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; display: block; }
+.sse-hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; background: linear-gradient(180deg, rgba(10,10,10,.65) 0%, rgba(10,10,10,.45) 40%, rgba(10,10,10,.88) 100%); }
+.sse-hero-content { position: relative; z-index: 2; max-width: 800px; margin: 0 auto; }
 .sse-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem; }
 .sse-video { text-align: center; padding: 4rem 5%; }
 .sse-subtitle { font-family: var(--font-heading); font-size: 1.3rem; letter-spacing: 3px; text-transform: uppercase; color: var(--white); margin-bottom: 2rem; }
