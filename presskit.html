@@ -68,6 +68,20 @@
   .pk-back:hover { border-color: var(--gold); background: rgba(201,168,76,.1); }
   .pk-back svg { width: 14px; height: 14px; }
   
+  .pk-audio { max-width: 600px; margin: 0 auto; background: var(--black-card); padding: 1.5rem; border: 1px solid rgba(201,168,76,.2); border-radius: 8px; text-align: left; }
+  .pk-audio h4 { color: var(--gold); font-family: var(--font-heading); margin-bottom: 1rem; font-size: 1.1rem; }
+  .pk-audio audio { width: 100%; height: 40px; outline: none; }
+  .pk-audio audio::-webkit-media-controls-panel { background-color: var(--white); }
+  
+  .pk-story { max-width: 800px; margin: 0 auto; background: var(--black-card); border: 1px solid rgba(201,168,76,.1); padding: 3rem; text-align: left; position: relative; }
+  .pk-story h3 { font-family: var(--font-heading); color: var(--gold); font-size: 1.8rem; margin-bottom: 1.5rem; text-align: center; }
+  .pk-story-content { font-size: .95rem; color: var(--white-soft); font-weight: 300; line-height: 1.8; position: relative; }
+  .pk-story-text { max-height: 200px; overflow: hidden; transition: max-height .5s ease; position: relative; }
+  .pk-story-text.expanded { max-height: 2000px; }
+  .pk-story-fade { position: absolute; bottom: 0; left: 0; width: 100%; height: 80px; background: linear-gradient(transparent, var(--black-card)); transition: opacity .3s; }
+  .pk-story-text.expanded .pk-story-fade { opacity: 0; pointer-events: none; }
+  .pk-story-controls { display: flex; justify-content: center; gap: 1rem; margin-top: 2rem; flex-wrap: wrap; }
+  
   @media (max-width: 768px) {
     .pk-cover-art, .pk-info-grid { grid-template-columns: 1fr; }
     .pk-title { font-size: 2.5rem; }
@@ -105,6 +119,48 @@
     <div class="pk-divider pk-divider-center"></div>
     <div class="pk-video">
       <iframe src="https://www.youtube.com/embed/7PjUKQppTC8?rel=0&modestbranding=1" title="Se Siente Ecuador - Video Oficial" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+    </div>
+  </div>
+</div>
+
+<!-- AUDIO -->
+<div class="section section-darker" style="text-align:center">
+  <div class="pk-section" style="padding-top:2rem">
+    <h2 class="pk-section-title" style="text-align:center"><span class="gold">Audio</span> Oficial</h2>
+    <div class="pk-divider pk-divider-center"></div>
+    <div class="pk-audio">
+      <h4>Se Siente Ecuador - Mastered</h4>
+      <audio controls controlsList="nodownload">
+        <source src="assets/audio/se-siente-ecuador.mp3" type="audio/mpeg">
+        Tu navegador no soporta el elemento de audio.
+      </audio>
+    </div>
+  </div>
+</div>
+
+<!-- STORY -->
+<div class="section section-dark" style="text-align:center">
+  <div class="pk-section">
+    <div class="pk-story">
+      <h3>¿Cómo nació "Se Siente Ecuador"?</h3>
+      <div class="pk-story-content">
+        <div class="pk-story-text" id="storyText">
+          <p>Desde muy pequeña soñé con escribir una canción para Ecuador. Siempre me emocionó escuchar los temas que acompañaban a nuestra selección en los mundiales, porque cuando juega Ecuador sucede algo especial: el país entero se une detrás de una misma bandera.</p>
+          <p>Mi amor por mi tierra también creció durante los años en los que tuve la oportunidad de recorrer varios países formando parte del Grupo Deseo. Cada vez que nos tocaba interpretar canciones autóctonas de Ecuador, veía a nuestros compatriotas cantar, llorar, gritar y levantar con orgullo la bandera tricolor. Muchas veces yo misma terminaba con lágrimas en los ojos al ver cómo, aun estando lejos, llevaban a Ecuador en el corazón. Esos momentos marcaron mi vida y siempre me hicieron pensar: "Algún día quiero cantar también para mi país".</p>
+          <p>La idea de "Se siente Ecuador" nació en medio de un momento de reflexión. Había leído noticias que me entristecieron sobre la situación del país, pero también se acercaba el Mundial. Entonces pensé que era el momento perfecto para aportar un granito de arena a través de la música, para recordar quiénes somos realmente los ecuatorianos.</p>
+          <p>Porque más allá de las dificultades, somos gente trabajadora, alegre, valiente y luchadora. Somos personas que se levantan una y otra vez y que nunca dejan de creer.</p>
+          <p>"Se siente Ecuador" es un homenaje a esa esencia. Es una canción hecha con amor para mi gente, para quienes están dentro y fuera del país, y para todos aquellos que sienten orgullo de haber nacido en esta hermosa tierra.</p>
+          <p>Y si Dios lo permite, espero que esta canción pueda acompañarme algún día por diferentes rincones del mundo, llevando un pedacito de Ecuador a cada lugar donde la música me permita llegar.</p>
+          <div class="pk-story-fade"></div>
+        </div>
+        <div class="pk-story-controls">
+          <button class="btn btn-outline" id="btnExpandStory">Leer Historia Completa</button>
+          <button class="btn btn-gold" id="btnCopyStory">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px;margin-right:6px;vertical-align:middle"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"></path></svg>
+            Copiar Texto
+          </button>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -248,5 +304,24 @@
   <p>© 2026 Karen Vargas — Se Siente Ecuador · Producción: <a href="https://eventosprimeai.com" target="_blank">Eventos Prime Artist</a></p>
 </footer>
 
+</footer>
+
+<script>
+  document.getElementById('btnExpandStory').addEventListener('click', function() {
+    const text = document.getElementById('storyText');
+    text.classList.toggle('expanded');
+    this.textContent = text.classList.contains('expanded') ? 'Ocultar Historia' : 'Leer Historia Completa';
+  });
+
+  document.getElementById('btnCopyStory').addEventListener('click', function() {
+    const story = `¿Cómo nació "Se Siente Ecuador"?\n\nDesde muy pequeña soñé con escribir una canción para Ecuador. Siempre me emocionó escuchar los temas que acompañaban a nuestra selección en los mundiales, porque cuando juega Ecuador sucede algo especial: el país entero se une detrás de una misma bandera.\n\nMi amor por mi tierra también creció durante los años en los que tuve la oportunidad de recorrer varios países formando parte del Grupo Deseo. Cada vez que nos tocaba interpretar canciones autóctonas de Ecuador, veía a nuestros compatriotas cantar, llorar, gritar y levantar con orgullo la bandera tricolor. Muchas veces yo misma terminaba con lágrimas en los ojos al ver cómo, aun estando lejos, llevaban a Ecuador en el corazón. Esos momentos marcaron mi vida y siempre me hicieron pensar: "Algún día quiero cantar también para mi país".\n\nLa idea de "Se siente Ecuador" nació en medio de un momento de reflexión. Había leído noticias que me entristecieron sobre la situación del país, pero también se acercaba el Mundial. Entonces pensé que era el momento perfecto para aportar un granito de arena a través de la música, para recordar quiénes somos realmente los ecuatorianos.\n\nPorque más allá de las dificultades, somos gente trabajadora, alegre, valiente y luchadora. Somos personas que se levantan una y otra vez y que nunca dejan de creer.\n\n"Se siente Ecuador" es un homenaje a esa esencia. Es una canción hecha con amor para mi gente, para quienes están dentro y fuera del país, y para todos aquellos que sienten orgullo de haber nacido en esta hermosa tierra.\n\nY si Dios lo permite, espero que esta canción pueda acompañarme algún día por diferentes rincones del mundo, llevando un pedacito de Ecuador a cada lugar donde la música me permita llegar.\n\n- Karen Vargas`;
+    
+    navigator.clipboard.writeText(story).then(() => {
+      const original = this.innerHTML;
+      this.innerHTML = '✓ Texto Copiado';
+      setTimeout(() => this.innerHTML = original, 2500);
+    });
+  });
+</script>
 </body>
 </html>
