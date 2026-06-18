@@ -132,3 +132,37 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+
+// FORM SUBMISSION HANDLER
+function handleFormSubmit(e, tipo) {
+  e.preventDefault();
+  const form = e.target;
+  const data = new FormData(form);
+  let msg = tipo === 'publicidad' 
+    ? '🏢 *PROPUESTA DE PUBLICIDAD / PATROCINIO*\n_Se Siente Ecuador — Copa del Mundo 2026_\n\n'
+    : '🎤 *SOLICITUD DE CONTRATACIÓN ARTÍSTICA*\n_Karen Vargas y Las Latinas del Son_\n\n';
+  
+  for (const [key, value] of data.entries()) {
+    if (value) {
+      const label = key.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+      msg += `*${label}:* ${value}\n`;
+    }
+  }
+  msg += '\n_Enviado desde karenvargas.eventosprimeai.com_';
+  
+  const encoded = encodeURIComponent(msg);
+  window.open(`https://wa.me/593969324140?text=${encoded}`, '_blank');
+
+  // Show success state
+  const btn = form.querySelector('button[type="submit"]');
+  const original = btn.textContent;
+  btn.textContent = '✓ Enviado';
+  btn.style.opacity = '.6';
+  btn.disabled = true;
+  setTimeout(() => {
+    btn.textContent = original;
+    btn.style.opacity = '1';
+    btn.disabled = false;
+    form.reset();
+  }, 3000);
+}

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Press Kit — Se Siente Ecuador | Karen Vargas</title>
+<meta name="description" content="Press Kit oficial de Se Siente Ecuador de Karen Vargas. Descarga material de prensa, logos, video en 4K y assets para medios de comunicación.">
+<meta property="og:title" content="Press Kit — Se Siente Ecuador | Karen Vargas">
+<meta property="og:description" content="Material de prensa oficial para medios, sponsors y aliados estratégicos.">
+<meta property="og:image" content="assets/images/portada-se-siente-ecuador.png">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" type="image/png" href="assets/images/Logo Karen Vargas y las latinas del son - 3.png">
+<style>
+  .pk-hero { position: relative; min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; overflow: hidden; }
+  .pk-hero-bg { position: absolute; inset: 0; }
+  .pk-hero-bg img { width: 100%; height: 100%; object-fit: cover; object-position: center 20%; }
+  .pk-hero-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,10,10,.5) 0%, rgba(10,10,10,.3) 30%, rgba(10,10,10,.9) 100%); }
+  .pk-hero-content { position: relative; z-index: 2; max-width: 800px; padding: 2rem; }
+  .pk-badge { display: inline-block; border: 1px solid var(--gold); padding: .4rem 1.5rem; font-size: .65rem; letter-spacing: 4px; text-transform: uppercase; color: var(--gold); margin-bottom: 2rem; }
+  .pk-title { font-family: var(--font-heading); font-size: clamp(3rem,6vw,5rem); color: var(--white); line-height: 1.1; margin-bottom: 1rem; }
+  .pk-title .gold { color: var(--gold); }
+  .pk-subtitle { font-size: 1.1rem; color: var(--white-soft); font-weight: 300; margin-bottom: 2.5rem; line-height: 1.6; }
+  .pk-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  
+  .pk-section { padding: 5rem 5%; max-width: 1100px; margin: 0 auto; }
+  .pk-section-title { font-family: var(--font-heading); font-size: 1.8rem; color: var(--white); margin-bottom: .5rem; }
+  .pk-section-title .gold { color: var(--gold); }
+  .pk-divider { width: 60px; height: 2px; background: var(--gold); margin: 1rem 0 2rem; }
+  .pk-divider-center { margin: 1rem auto 2rem; }
+  
+  .pk-video { max-width: 900px; margin: 0 auto; aspect-ratio: 16/9; border: 1px solid rgba(201,168,76,.2); box-shadow: 0 20px 60px rgba(0,0,0,.5); }
+  .pk-video iframe { width: 100%; height: 100%; }
+  
+  .pk-cover-art { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 2rem 0; align-items: start; }
+  .pk-cover-card { border: 1px solid rgba(201,168,76,.1); overflow: hidden; }
+  .pk-cover-card img { width: 100%; aspect-ratio: 1; object-fit: cover; transition: transform .5s ease; }
+  .pk-cover-card:hover img { transform: scale(1.03); }
+  .pk-cover-label { padding: 1rem; font-size: .7rem; letter-spacing: 2px; text-transform: uppercase; color: var(--gray); text-align: center; background: var(--black-card); }
+  
+  .pk-info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .pk-info-card { background: var(--black-card); border: 1px solid rgba(201,168,76,.08); padding: 2rem; }
+  .pk-info-card h4 { font-family: var(--font-heading); color: var(--gold); font-size: .9rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 1rem; }
+  .pk-info-card p, .pk-info-card li { font-size: .85rem; color: var(--white-soft); font-weight: 300; line-height: 1.7; }
+  .pk-info-card ul { list-style: none; padding: 0; }
+  .pk-info-card li::before { content: '—'; color: var(--gold); margin-right: .5rem; }
+  
+  .pk-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 2rem; }
+  .pk-link { display: flex; align-items: center; gap: .8rem; padding: 1rem 1.5rem; background: var(--black-card); border: 1px solid rgba(201,168,76,.1); color: var(--white-soft); font-size: .8rem; letter-spacing: 1px; text-transform: uppercase; transition: var(--transition); }
+  .pk-link:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
+  .pk-link svg { width: 22px; height: 22px; flex-shrink: 0; }
+  
+  .pk-sponsors { display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; align-items: center; margin-top: 2rem; }
+  .pk-sponsor { display: flex; flex-direction: column; align-items: center; gap: .6rem; }
+  .pk-sponsor img { height: 55px; width: auto; object-fit: contain; filter: grayscale(40%) brightness(1.1); transition: var(--transition); }
+  .pk-sponsor:hover img { filter: none; }
+  .pk-sponsor span { font-size: .65rem; letter-spacing: 2px; text-transform: uppercase; color: var(--gray); }
+  
+  .pk-contact-bar { display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin-top: 2rem; }
+  .pk-contact-item { display: flex; align-items: center; gap: .5rem; color: var(--white-soft); font-size: .85rem; }
+  .pk-contact-item svg { width: 18px; height: 18px; stroke: var(--gold); }
+  
+  .pk-footer { text-align: center; padding: 3rem 2rem; border-top: 1px solid rgba(201,168,76,.08); }
+  .pk-footer p { font-size: .7rem; letter-spacing: 2px; text-transform: uppercase; color: var(--gray-dark); }
+  .pk-footer a { color: var(--gold); }
+  
+  .pk-back { position: fixed; top: 1.5rem; left: 1.5rem; z-index: 100; display: flex; align-items: center; gap: .5rem; padding: .5rem 1rem; background: rgba(10,10,10,.8); backdrop-filter: blur(10px); border: 1px solid rgba(201,168,76,.2); color: var(--gold); font-size: .7rem; letter-spacing: 2px; text-transform: uppercase; transition: var(--transition); }
+  .pk-back:hover { border-color: var(--gold); background: rgba(201,168,76,.1); }
+  .pk-back svg { width: 14px; height: 14px; }
+  
+  @media (max-width: 768px) {
+    .pk-cover-art, .pk-info-grid { grid-template-columns: 1fr; }
+    .pk-title { font-size: 2.5rem; }
+    .pk-contact-bar { flex-direction: column; align-items: center; }
+  }
+</style>
+</head>
+<body>
+
+<a href="index.html" class="pk-back">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+  Volver
+</a>
+
+<!-- HERO -->
+<section class="pk-hero">
+  <div class="pk-hero-bg"><img src="assets/images/portada-youtube-se-siente-ecuador.jpeg" alt="Se Siente Ecuador"></div>
+  <div class="pk-hero-overlay"></div>
+  <div class="pk-hero-content">
+    <div class="pk-badge">Press Kit Oficial</div>
+    <h1 class="pk-title"><span class="gold">Se Siente</span><br>Ecuador</h1>
+    <p class="pk-subtitle">Material de prensa oficial para medios de comunicación, sponsors y aliados estratégicos. El himno que une a todo un país rumbo a la Copa del Mundo 2026.</p>
+    <div class="pk-buttons">
+      <a href="https://www.youtube.com/watch?v=7PjUKQppTC8" target="_blank" class="btn btn-gold">Ver Video Oficial</a>
+      <a href="https://distrokid.com/hyperfollow/karenvargas/se-siente-ecuador" target="_blank" class="btn btn-outline">Escuchar Ahora</a>
+      <a href="https://mab.to/DQv9dpiUJu62C/us2" target="_blank" class="btn btn-fuchsia">Descargar Video 4K</a>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO -->
+<div class="section section-dark" style="text-align:center">
+  <div class="pk-section">
+    <h2 class="pk-section-title" style="text-align:center"><span class="gold">Video</span> Oficial</h2>
+    <div class="pk-divider pk-divider-center"></div>
+    <div class="pk-video">
+      <iframe src="https://www.youtube.com/embed/7PjUKQppTC8?rel=0&modestbranding=1" title="Se Siente Ecuador - Video Oficial" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+    </div>
+  </div>
+</div>
+
+<!-- ARTWORK -->
+<div class="section section-darker">
+  <div class="pk-section">
+    <h2 class="pk-section-title"><span class="gold">Artwork</span> Oficial</h2>
+    <div class="pk-divider"></div>
+    <p style="color:var(--gray);font-size:.85rem;margin-bottom:2rem;">Portadas oficiales para uso editorial. Click derecho → Guardar imagen para descargar.</p>
+    <div class="pk-cover-art">
+      <div class="pk-cover-card">
+        <img src="assets/images/portada-se-siente-ecuador.png" alt="Portada - Se Siente Ecuador" loading="lazy">
+        <div class="pk-cover-label">Portada Single — Se Siente Ecuador</div>
+      </div>
+      <div class="pk-cover-card">
+        <img src="assets/images/portada-youtube-se-siente-ecuador.jpeg" alt="Portada YouTube - Se Siente Ecuador" loading="lazy">
+        <div class="pk-cover-label">Portada YouTube — Formato Wide</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- INFO -->
+<div class="section section-dark">
+  <div class="pk-section">
+    <h2 class="pk-section-title"><span class="gold">Información</span> del Sencillo</h2>
+    <div class="pk-divider"></div>
+    <div class="pk-info-grid">
+      <div class="pk-info-card">
+        <h4>Ficha Técnica</h4>
+        <ul>
+          <li>Título: Se Siente Ecuador</li>
+          <li>Artista: Karen Vargas</li>
+          <li>Género: Tecnocumbia / Pop Latino</li>
+          <li>Producción: Eventos Prime Artist</li>
+          <li>Año: 2026</li>
+          <li>Contexto: Copa del Mundo 2026</li>
+        </ul>
+      </div>
+      <div class="pk-info-card">
+        <h4>Sinopsis</h4>
+        <p>"Se Siente Ecuador" es un himno de unión y orgullo patrio creado por Karen Vargas en apoyo a la Selección de Ecuador rumbo al Mundial 2026. La canción fusiona tecnocumbia con ritmos modernos, celebrando la identidad, la cultura y la pasión deportiva ecuatoriana. El video musical cuenta con la participación del grupo de baile Alma y Cultura y el apoyo de Casa Deportiva Jackson.</p>
+      </div>
+      <div class="pk-info-card">
+        <h4>La Artista</h4>
+        <p>Karen Michelle Vargas Sánchez es una artista ecuatoriana con más de 20 años de trayectoria internacional. Vocalista, animadora, performer y actriz con presencia en 9 países y 3 continentes. Ha compartido escenario con Jerry Rivera, Gilberto Santa Rosa, Celia Cruz, Maelo Ruiz y El Chombo.</p>
+      </div>
+      <div class="pk-info-card">
+        <h4>Colaboradores</h4>
+        <ul>
+          <li>Bailarines: Alma y Cultura (Samborondón)</li>
+          <li>Sponsor: Casa Deportiva Jackson</li>
+          <li>Producción: Eventos Prime Artist</li>
+          <li>Dirección artística: Karen Vargas</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- LINKS -->
+<div class="section section-darker">
+  <div class="pk-section" style="text-align:center">
+    <h2 class="pk-section-title" style="text-align:center"><span class="gold">Links</span> Oficiales</h2>
+    <div class="pk-divider pk-divider-center"></div>
+    <div class="pk-links">
+      <a href="https://distrokid.com/hyperfollow/karenvargas/se-siente-ecuador" target="_blank" class="pk-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
+        Streaming
+      </a>
+      <a href="https://www.youtube.com/watch?v=7PjUKQppTC8" target="_blank" class="pk-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33A2.78 2.78 0 003.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.25 29 29 0 00-.46-5.43z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+        YouTube
+      </a>
+      <a href="https://mab.to/DQv9dpiUJu62C/us2" target="_blank" class="pk-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+        Video 4K
+      </a>
+      <a href="https://www.instagram.com/karenvargasoficial/" target="_blank" class="pk-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+        Instagram
+      </a>
+      <a href="https://www.tiktok.com/@karenvargascantante" target="_blank" class="pk-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12a4 4 0 104 4V4a5 5 0 005 5"></path></svg>
+        TikTok
+      </a>
+      <a href="https://www.facebook.com/karencomparte" target="_blank" class="pk-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path></svg>
+        Facebook
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- SPONSORS -->
+<div class="section section-dark" style="text-align:center">
+  <div class="pk-section">
+    <h2 class="pk-section-title" style="text-align:center">Con el <span class="gold">apoyo</span> de</h2>
+    <div class="pk-divider pk-divider-center"></div>
+    <div class="pk-sponsors">
+      <a href="https://www.tiktok.com/@casadeportivajackson" target="_blank" class="pk-sponsor">
+        <img src="assets/images/logo-casa-deportiva-jackson.png" alt="Casa Deportiva Jackson">
+        <span>Casa Deportiva Jackson</span>
+      </a>
+      <a href="https://www.tiktok.com/@almaycultura_samborondon" target="_blank" class="pk-sponsor">
+        <img src="assets/images/logo-alma-y-cultura.png" alt="Alma y Cultura">
+        <span>Alma y Cultura</span>
+      </a>
+      <a href="https://www.instagram.com/eventos__prime/" target="_blank" class="pk-sponsor">
+        <img src="assets/images/Logo Karen Vargas y las latinas del son - 3.png" alt="Eventos Prime Artist">
+        <span>Eventos Prime Artist</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<div class="section section-darker" style="text-align:center">
+  <div class="pk-section">
+    <h2 class="pk-section-title" style="text-align:center"><span class="gold">Contacto</span> de Prensa</h2>
+    <div class="pk-divider pk-divider-center"></div>
+    <p style="color:var(--gray);font-size:.85rem;margin-bottom:2rem;">Para entrevistas, notas de prensa, material exclusivo o propuestas comerciales:</p>
+    <div class="pk-contact-bar">
+      <div class="pk-contact-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"></path></svg>
+        +593 969 324 140
+      </div>
+      <div class="pk-contact-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+        @karenvargasoficial
+      </div>
+    </div>
+    <div style="margin-top:2.5rem">
+      <a href="https://wa.me/593969324140?text=Hola%2C%20soy%20de%20prensa%20y%20necesito%20material%20de%20Se%20Siente%20Ecuador" target="_blank" class="btn btn-gold">Contactar para Prensa</a>
+    </div>
+  </div>
+</div>
+
+<footer class="pk-footer">
+  <p>© 2026 Karen Vargas — Se Siente Ecuador · Producción: <a href="https://www.instagram.com/eventos__prime/" target="_blank">Eventos Prime Artist</a></p>
+</footer>
+
+</body>
+</html>
