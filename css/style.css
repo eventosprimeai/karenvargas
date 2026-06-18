@@ -168,6 +168,15 @@ a:hover { color: var(--gold-bright); }
 .form-group textarea { resize: vertical; min-height: 80px; }
 .form-submit { width: 100%; justify-content: center; margin-top: .5rem; }
 .form-disclaimer { text-align: center; font-size: .7rem; color: var(--gray-dark); letter-spacing: 1px; text-transform: uppercase; margin-top: 1rem; }
+.services-checklist { display: grid; grid-template-columns: 1fr 1fr; gap: .5rem; }
+.check-item { display: flex; align-items: center; gap: .5rem; font-size: .8rem; color: var(--white-soft); font-weight: 300; padding: .5rem .7rem; border: 1px solid rgba(201,168,76,.08); cursor: pointer; transition: var(--transition); }
+.check-item:hover { border-color: rgba(201,168,76,.25); background: rgba(201,168,76,.03); }
+.check-item input[type="checkbox"] { appearance: none; -webkit-appearance: none; width: 16px; height: 16px; border: 1px solid rgba(201,168,76,.3); background: transparent; cursor: pointer; position: relative; flex-shrink: 0; }
+.check-item input[type="checkbox"]:checked { background: var(--gold); border-color: var(--gold); }
+.check-item input[type="checkbox"]:checked::after { content: '✓'; position: absolute; top: -1px; left: 2px; font-size: 12px; color: var(--black); font-weight: 700; }
+.form-success { text-align: center; padding: 3rem 2rem; }
+.form-success h4 { font-family: var(--font-heading); color: var(--gold); font-size: 1.3rem; margin-bottom: .5rem; }
+.form-success p { color: var(--gray); font-size: .85rem; }
 
 
 /* ========== GALLERY ========== */

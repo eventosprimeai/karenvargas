@@ -133,36 +133,75 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-// FORM SUBMISSION HANDLER
-function handleFormSubmit(e, tipo) {
+// FORM SUBMISSION HANDLER — sends via Eventos Prime API (Resend) + WhatsApp
+async function handleFormSubmit(e, tipo) {
   e.preventDefault();
   const form = e.target;
+  const btn = form.querySelector('button[type="submit"]');
+  const originalText = btn.textContent;
+  btn.textContent = 'Enviando...';
+  btn.disabled = true;
+
+  // Collect form data
   const data = new FormData(form);
+  const fields = {};
+  const servicios = [];
+  for (const [key, value] of data.entries()) {
+    if (key === 'servicios') { servicios.push(value); }
+    else if (value) { fields[key] = value; }
+  }
+  if (servicios.length) fields.servicios = servicios.join(', ');
+
+  // Build WhatsApp message
   let msg = tipo === 'publicidad' 
     ? '🏢 *PROPUESTA DE PUBLICIDAD / PATROCINIO*\n_Se Siente Ecuador — Copa del Mundo 2026_\n\n'
     : '🎤 *SOLICITUD DE CONTRATACIÓN ARTÍSTICA*\n_Karen Vargas y Las Latinas del Son_\n\n';
-  
-  for (const [key, value] of data.entries()) {
-    if (value) {
-      const label = key.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
-      msg += `*${label}:* ${value}\n`;
-    }
+  for (const [key, value] of Object.entries(fields)) {
+    const label = key.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+    msg += `*${label}:* ${value}\n`;
   }
   msg += '\n_Enviado desde karenvargas.eventosprimeai.com_';
-  
+
+  // Build email HTML
+  const isPublicidad = tipo === 'publicidad';
+  const color = isPublicidad ? '#c9a84c' : '#e91e8c';
+  const title = isPublicidad ? 'Nueva Propuesta de Publicidad / Patrocinio' : 'Nueva Solicitud de Contratación Artística';
+  const subtitle = isPublicidad ? 'Se Siente Ecuador — Copa del Mundo 2026' : 'Karen Vargas y Las Latinas del Son';
+  let rows = '';
+  for (const [key, value] of Object.entries(fields)) {
+    const label = key.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+    rows += `<tr><td style="padding:8px 12px;color:#888;font-size:12px;text-transform:uppercase;letter-spacing:1px;border-bottom:1px solid #1a1a1a;width:140px;">${label}</td><td style="padding:8px 12px;color:#f0f0f0;font-size:14px;border-bottom:1px solid #1a1a1a;">${value}</td></tr>`;
+  }
+  const emailHtml = `<div style="font-family:sans-serif;max-width:560px;margin:0 auto;background:#0a0a0a;color:#f0f0f0;border-radius:12px;overflow:hidden;border:1px solid #1a1a1a;"><div style="background:linear-gradient(135deg,${color}22,${color}08);padding:28px;text-align:center;border-bottom:1px solid ${color}33;"><h1 style="margin:0;font-size:1.3rem;color:${color};">${title}</h1><p style="margin:6px 0 0;color:#888;font-size:.85rem;">${subtitle}</p></div><div style="padding:20px;"><table style="width:100%;border-collapse:collapse;">${rows}</table></div><div style="padding:16px 20px;border-top:1px solid #1a1a1a;text-align:center;"><p style="margin:0;color:#555;font-size:.7rem;">Enviado desde karenvargas.eventosprimeai.com</p></div></div>`;
+
+  // Send email via Eventos Prime API
+  try {
+    await fetch('https://eventosprimeai.com/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        from: 'Karen Vargas Web <cloud@eventosprimeai.com>',
+        to: 'ventas@eventosprimeai.com',
+        subject: `[Karen Vargas] ${title}`,
+        html: emailHtml
+      })
+    });
+  } catch (err) {
+    console.log('Email fallback to WhatsApp:', err);
+  }
+
+  // Open WhatsApp as secondary channel
   const encoded = encodeURIComponent(msg);
   window.open(`https://wa.me/593969324140?text=${encoded}`, '_blank');
 
-  // Show success state
-  const btn = form.querySelector('button[type="submit"]');
-  const original = btn.textContent;
+  // Show success
   btn.textContent = '✓ Enviado';
   btn.style.opacity = '.6';
-  btn.disabled = true;
   setTimeout(() => {
-    btn.textContent = original;
+    btn.textContent = originalText;
     btn.style.opacity = '1';
     btn.disabled = false;
     form.reset();
   }, 3000);
 }
+
