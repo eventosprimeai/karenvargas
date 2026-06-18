@@ -365,21 +365,22 @@
           </select>
         </div>
         <div class="form-group">
-          <label>Servicios Adicionales</label>
-          <div class="services-checklist">
-            <label class="check-item"><input type="checkbox" name="servicios" value="Orquesta en Vivo"> Orquesta en Vivo</label>
-            <label class="check-item"><input type="checkbox" name="servicios" value="Sonido Profesional"> Sonido Profesional</label>
-            <label class="check-item"><input type="checkbox" name="servicios" value="Iluminación Escénica"> Iluminación Escénica</label>
-            <label class="check-item"><input type="checkbox" name="servicios" value="Organización Integral del Evento"> Organización del Evento</label>
-            <label class="check-item"><input type="checkbox" name="servicios" value="DJ / Música Ambiente"> DJ / Música Ambiente</label>
-            <label class="check-item"><input type="checkbox" name="servicios" value="Animación / MC"> Animación / MC</label>
-            <label class="check-item"><input type="checkbox" name="servicios" value="Escenografía y Decoración"> Escenografía y Decoración</label>
-            <label class="check-item"><input type="checkbox" name="servicios" value="Video y Fotografía"> Video y Fotografía</label>
-            <label class="check-item"><input type="checkbox" name="servicios" value="Pantallas LED"> Pantallas LED</label>
-            <label class="check-item"><input type="checkbox" name="servicios" value="Tarima / Staging"> Tarima / Staging</label>
-            <label class="check-item"><input type="checkbox" name="servicios" value="Catering"> Catering</label>
-            <label class="check-item"><input type="checkbox" name="servicios" value="Logística y Transporte"> Logística y Transporte</label>
-          </div>
+          <label>Servicios Adicionales *</label>
+          <select name="servicios" multiple size="4" style="min-height:120px">
+            <option value="Orquesta en Vivo">Orquesta en Vivo</option>
+            <option value="Sonido Profesional">Sonido Profesional</option>
+            <option value="Iluminación Escénica">Iluminación Escénica</option>
+            <option value="Organización del Evento">Organización Integral del Evento</option>
+            <option value="DJ / Música Ambiente">DJ / Música Ambiente</option>
+            <option value="Animación / MC">Animación / MC</option>
+            <option value="Escenografía y Decoración">Escenografía y Decoración</option>
+            <option value="Video y Fotografía">Video y Fotografía</option>
+            <option value="Pantallas LED">Pantallas LED</option>
+            <option value="Tarima / Staging">Tarima / Staging</option>
+            <option value="Catering">Catering</option>
+            <option value="Logística y Transporte">Logística y Transporte</option>
+          </select>
+          <p style="font-size:.65rem;color:var(--gray-dark);margin-top:.4rem;letter-spacing:1px">* Mantén Ctrl (o Cmd) para seleccionar varios servicios. Nuestro equipo de trabajo cubre todas las necesidades de tu evento.</p>
         </div>
         <div class="form-group">
           <label>Detalles Adicionales</label>

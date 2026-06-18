@@ -166,6 +166,9 @@ a:hover { color: var(--gold-bright); }
 .form-group select { cursor: pointer; -webkit-appearance: none; appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23888' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 1rem center; }
 .form-group select option { background: var(--black-card); color: var(--white); }
 .form-group textarea { resize: vertical; min-height: 80px; }
+.form-group select[multiple] { appearance: auto; -webkit-appearance: listbox; background-image: none; padding: .5rem; }
+.form-group select[multiple] option { padding: .5rem .8rem; border-bottom: 1px solid rgba(201,168,76,.05); }
+.form-group select[multiple] option:checked { background: rgba(201,168,76,.2); color: var(--gold); }
 .form-submit { width: 100%; justify-content: center; margin-top: .5rem; }
 .form-disclaimer { text-align: center; font-size: .7rem; color: var(--gray-dark); letter-spacing: 1px; text-transform: uppercase; margin-top: 1rem; }
 .services-checklist { display: grid; grid-template-columns: 1fr 1fr; gap: .5rem; }
